@@ -4,7 +4,7 @@
 # All Rights Reserved.
 from .base import *
 
-APP_BASE_URL = "127.0.0.1:{}".format(APP_PORT_NUMBER)
+APP_BASE_URL = "http://127.0.0.1:{}".format(APP_PORT_NUMBER)
 
 DEBUG = True
 

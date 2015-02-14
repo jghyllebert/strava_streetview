@@ -9,7 +9,7 @@ import tornado.ioloop
 import tornado.web
 import tornado.httpserver
 
-from handlers.auth_handler import AuthLoginHandler
+from handlers.auth_handler import AuthLoginHandler, ExchangeHandler
 from config import set_environ, Settings
 
 if __name__ == '__main__':
@@ -29,11 +29,13 @@ if __name__ == '__main__':
         'debug': settings.DEBUG,
     }
 
-    application = tornado.web.Application([
-        (r"/static/(.*)", tornado.web.StaticFileHandler),
-        (r"/", AuthLoginHandler, None, "home"),
-        (r"/auth/login/", AuthLoginHandler, None, "login"),
-    ], **app_settings)
+    application = tornado.web.Application(
+        [
+            (r"/static/(.*)", tornado.web.StaticFileHandler),
+            (r"/", AuthLoginHandler, None, "home"),
+            (r"/auth/login/", AuthLoginHandler, None, "login"),
+            (r"/auth/exchange", ExchangeHandler, None, "exchange"),
+        ], **app_settings)
 
     http_server = tornado.httpserver.HTTPServer(application)
     http_server.listen(settings.APP_PORT_NUMBER)

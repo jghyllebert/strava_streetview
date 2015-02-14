@@ -5,10 +5,9 @@
     <title>Strava Streetview</title>
 </head>
 <body>
-{% if auth_url %}
-<a href="{{ auth_url }}"><img src="{{ static_url('images/LogInWithStrava.png') }}"></a>
-{% else %}
-{{ code }}
+{% if error %}
+{{ error }}
 {% end %}
+<a href="{{ auth_url }}"><img src="{{ static_url('images/LogInWithStrava.png') }}"></a>
 </body>
 </html>
