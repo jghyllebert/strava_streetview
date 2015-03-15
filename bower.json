@@ -1,0 +1,13 @@
+{
+  "name": "strava_streetview",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jghyllebert/strava_streetview",
+  "authors": [
+    "Jonas Ghyllebert"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "semantic-ui": "~1.8.1"
+  }
+}
